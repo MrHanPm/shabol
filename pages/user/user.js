@@ -15,5 +15,10 @@ Page({
           userInfo:userInfo,
         })
       })
+    },
+    edit:function(){
+      wx.navigateTo({
+        url:'../editMine/index'
+      })
     }
 })

@@ -3,7 +3,7 @@ let app = getApp(),
 Page({
 	data: {
 		id:'',
-	  	list:[],
+	  list:[],
 		page:1,
 		loading:false,
 		shareHidden:true,
@@ -88,6 +88,9 @@ Page({
 			success:function(res){
 				var newListData = that.data['list'];
 				newListData.splice(index,1)
+				if(newListData.length < 5){
+					that.listRender(app.uid,that)
+				}
 				that.setData({
 					list:newListData
 				});
